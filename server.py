@@ -55,7 +55,11 @@ def route_pixels():
             if color < 0 or color > 1:
                 return 'Invalid rgb value %s' % (color,), 400
 
-    app.renderer.pixels = json_pixels
+    app.renderer.pixels[3] = json_pixels[0]
+    app.renderer.pixels[2] = json_pixels[1]
+    app.renderer.pixels[0] = json_pixels[2]
+    app.renderer.pixels[1] = json_pixels[3]
+
     app.renderer.update()
 
     return '', 201

@@ -4,12 +4,15 @@ from threading import Thread
 import settings
 
 
-class Renderer():
+class Renderer(object):
     def __init__(self):
         self.client = Client(settings.FC_SERVER + ':' + str(settings.FC_PORT))
         self.brightness = 0.5
         self.pixels = [
-            [1, 1, 1], [1, 1, 1], [1, 1, 1], [1, 1, 1]
+            [1, 1, 1],
+            [1, 1, 1],
+            [1, 1, 1],
+            [1, 1, 1]
         ]
         self.render_pixels = self.calculate_pixels()
         self.render_thread = Thread(target=self.render)
@@ -32,6 +35,6 @@ class Renderer():
         self.render_pixels = self.calculate_pixels()
 
     def render(self):
-        self.client.put_pixels(self.render_pixels)
-        sleep(1.0 / settings.FRAMES)
-
+        while True:
+            self.client.put_pixels(self.render_pixels)
+            sleep(1.0 / settings.FRAMES)
