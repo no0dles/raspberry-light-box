@@ -1,5 +1,6 @@
 # Flask
 DEBUG = False
+WEB_PORT = 8000
 
 STATIC_FOLDER = 'static'
 STATIC_URL = '/static'
