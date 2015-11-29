@@ -1,0 +1,37 @@
+<html>
+    <head>
+        <title>Light Box</title>
+
+        <script src="static/components/angular/angular.min.js"></script>
+        <script src="static/components/angularjs-slider/dist/rzslider.min.js"></script>
+        <script src="static/main.js"></script>
+
+        <link rel="stylesheet" type="text/css" href="static/components/animate.css/animate.min.css">
+        <link rel="stylesheet" type="text/css" href="static/components/angular-slider/slider.css">
+        <link rel="stylesheet" type="text/css" href="static/components/angularjs-slider/dist/rzslider.min.css">
+        <link rel="stylesheet" type="text/css" href="static/style.css">
+    </head>
+    <body ng-app="app" ng-controller="LightController">
+        <div id="pixels" ng-if="ready">
+            <div ng-repeat="pixel in pixels track by $index">
+                <div class="pixel"
+                     ng-style="{background: getBackgroundColor(pixel)}"
+                     ng-mouseenter="hover=true"
+                     ng-mouseleave="hover=false">
+
+                    <div id="colors" ng-if="hover" class="animated fadeIn">
+                        <div class="color"
+                             ng-repeat="color in colors"
+                             ng-style="{background: color}"
+                             ng-click="changeColor($parent.$index, color)"
+                             ng-class="{active: compareColor(pixel, color)}">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="brightness">
+                <rzslider rz-slider-model="brightness.value" rz-slider-options="brightness.options"></rzslider>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,65 @@
+html, body {
+    background: #333;
+    color: #fff;
+    font-family: Verdana, sans-serif;
+}
+
+#pixels {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    
+    margin-top: -202px;
+    margin-left: -202px;
+    
+    width: 404px;
+    height: 404px;
+}
+
+#brightness {
+    position: absolute;
+    bottom: -50px;
+
+    width: 100%;
+}
+
+.pixel {
+    position: relative;
+    float: left;
+    width: 200px;
+    height: 200px;
+    border: 1px solid #000;
+}
+
+#colors {
+    margin: 50px;
+}
+
+#colors .color {
+    width: 20px;
+    height: 20px;
+    float: left;
+}
+
+#colors .active {
+    border: 1px solid blue;
+    width: 18px;
+    height: 18px;
+}
+
+rzslider .rz-pointer {
+    background-color: #fff;
+    width: 21px;
+    height: 21px;
+    top:-8px;
+}
+
+rzslider .rz-pointer:after,
+rzslider .rz-pointer:hover:after,
+rzslider .rz-pointer.rz-active:after {
+    background: none;
+}
+
+rzslider .rz-bar {
+    background: #222;
+}

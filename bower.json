@@ -1,0 +1,17 @@
+{
+  "name": "raspberry-light-box",
+  "homepage": "https://github.com/no0dles/raspberry-light-box",
+  "description": "",
+  "main": "static/main.js",
+  "moduleType": [],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "static/components"
+  ],
+  "dependencies": {
+    "angular": "~1.4.8",
+    "angularjs-slider": "~2.1.0",
+    "animate.css": "~3.4.0"
+  }
+}
